@@ -1,0 +1,13 @@
+{% for person in persons -%}
+    {{ person.name }} {{ person.age }}
+{% endfor %}
+
+conditions:
+{% for person in persons %}
+    {% if person.age < 18 %}
+        {{- person.name }}
+    {% endif %}
+{%- endfor %}
+
+sum examples:
+The sum of car prices is {{ cars | sum(attribute='price') }}
