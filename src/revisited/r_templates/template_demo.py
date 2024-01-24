@@ -1,9 +1,11 @@
 from jinja2 import Template, Environment, FileSystemLoader
 
+
 # https://atufashireen.medium.com/creating-templates-with-jinja-in-python-3ff3b87d6740
 # https://codeburst.io/jinja-2-explained-in-5-minutes-88548486834e
 # https://realpython.com/primer-on-jinja-templating/
-# https://jinja.palletsprojects.com/en/3.0.x/api/
+# https://jinja.palletsprojects.com/en/3.1.x/api/
+# https://documentation.bloomreach.com/engagement/docs/filters
 def what_is_template():
     name = input("Enter your name: ")
     tm = Template("Hello {{ name }}")
@@ -65,9 +67,6 @@ persons = [
     {'name': 'Dragomir', 'age': 54}
 ]
 
-file_loader = FileSystemLoader('templates')
-env = Environment(loader=file_loader)
-
 cars = [
     {'name': 'Audi', 'price': 23000},
     {'name': 'Skoda', 'price': 17300},
@@ -75,13 +74,22 @@ cars = [
     {'name': 'Volkswagen', 'price': 21300}
 ]
 
+file_loader = FileSystemLoader('templates')
+env = Environment(loader=file_loader)
+
+env.globals["test"] = "name"
+env.add_extension('jinja2.ext.debug')
+env.add_extension('jinja2.ext.i18n')
+
+
 def render_tmplate_files():
     template = env.get_template("examples.txt")
-    result = template.render(persons=persons,cars=cars)
+    result = template.render(persons=persons, cars=cars)
     print(result)
     # context_data = {persons:persons,cars:cars}
     # result2= template.render(context_data)
     # print(result2)
+
 
 def html_render():
     content = 'This is about page'
@@ -89,6 +97,12 @@ def html_render():
     output = template.render(content=content)
     print(output)
 
+
+def prefix_str(content: str,more_content:str) -> str:
+    return "prefix-" + content+"-"+str(more_content)
+
+
+env.globals["prefix_str"] = prefix_str
 
 if __name__ == '__main__':
     # what_is_template()

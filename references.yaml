@@ -9,6 +9,8 @@ meta:
 data:
   - https://github.com/clarkgrubb/data-tools.git
 
+tutorials:
+  -  https://github.com/mouredev/Hello-Python.git
 blogs:
   - https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/
   - https://www.digitalocean.com/community/tutorials

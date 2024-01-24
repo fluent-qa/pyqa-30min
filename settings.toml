@@ -3,3 +3,15 @@ log_level = 'INFO'
 db = {url="postgresql://postgres:changeit@localhost:7432/test_hub"}
 structure = { test = "http://localhost:7077" }
 mitm = { recorded_url = "https://matrix-api," }
+
+[dev]
+db_url= "postgresql://postgres:changeit@localhost:7432/test_hub"
+
+[test]
+db_url="postgresql://postgres:changeit@test:7432/test_hub"
+
+[product]
+db_url="postgresql://postgres:changeit@prod:7432/test_hub"
+
+[product_new]
+db_url="postgresql://postgres:changeit@prod_new:7432/test_hub"

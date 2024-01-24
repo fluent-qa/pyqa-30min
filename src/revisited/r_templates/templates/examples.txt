@@ -10,4 +10,12 @@ conditions:
 {%- endfor %}
 
 sum examples:
-The sum of car prices is {{ cars | sum(attribute='price') }}
+{% set sum_price =  cars | sum(attribute='price') %}
+The sum of car prices is  {{sum_price}}
+The sum of car prices is {{ sum_price }}
+
+
+global_variable:
+test: {{prefix_str(test,sum_price)}}
+
+{% debug %}
