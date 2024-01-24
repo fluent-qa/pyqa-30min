@@ -1,0 +1,21 @@
+advanced:
+  - https://github.com/omnilib/trailrunner.git
+orm:
+  - https://github.com/collerek/ormar.git
+model:
+  - https://github.com/rnag/dataclass-wizard.git
+meta:
+  - https://github.com/lycantropos/paradigm.git
+data:
+  - https://github.com/clarkgrubb/data-tools.git
+
+blogs:
+  - https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/
+  - https://www.digitalocean.com/community/tutorials
+  - https://www.udemy.com/course/practical-sql-with-python-in-3-days/
+  - https://blog.miguelgrinberg.com/post/my-courses-and-books
+  - https://www.datacamp.com/tutorial/sqlalchemy-tutorial-examples
+  - https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples
+  - https://www.geeksforgeeks.org/python3-tutorial/?ref=shm
+  - https://github.com/realpython/materials/tree/master
+  - https://github.com/palewire/python-open-source-template.git
