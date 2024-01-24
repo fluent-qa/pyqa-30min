@@ -75,3 +75,8 @@ tldr conda
     conda clean --all
 
 ```
+
+## Conda+Poetry
+
+poetry会自动使用conda的包管理器，所以poetry和conda可以同时使用。activate conda环境之后，运行poetry命令
+可以进行依赖的安装等操作而没有任何影响.
