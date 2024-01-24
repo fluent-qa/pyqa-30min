@@ -14,17 +14,16 @@ pipx install poetry
 pipx ensurepath
 ```
 
-## 2. Poetry Init Project
+## 2. Poetry 新建项目
 
-新建项目
 ```sh
-poetry new poetry-demo
+poetry new pyqa-30min
 
 ```
 
+## 3. 不同的代码folder结构:
 
-两种不同的folder结构:
-
+- 没有src目录:
 ```
 poetry-demo
 ├── pyproject.toml
@@ -34,15 +33,14 @@ poetry-demo
 └── tests
     └── __init__.py
 ```
-
+指定打包内容：
 ```sh
 packages = [{include = "poetry_demo"}]
 ```
 
-src 结构:
+- 有src目录结构:
 
 ```sh
-
 poetry-demo
 ├── pyproject.toml
 ├── README.md
@@ -51,6 +49,10 @@ poetry-demo
 │       └── __init__.py
 └── tests
     └── __init__.py
+```
+
+```sh
+packages = [{include = "poetry_demo"，from="src"}]
 ```
 
 ## 2. 安装依赖和依赖组(Dependency groups)
@@ -86,7 +88,7 @@ poetry install --only main
 poetry install --with docs
 poetry remove mkdocs --group docs
 ```
-- poetry.lock 文件
+- poetry.lock 文件: 锁定安装的依赖版本
 
 >  Dependency synchronization ensures that the locked dependencies in the poetry.lock
 

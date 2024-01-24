@@ -1,7 +1,5 @@
-name: gen-ai
+name: pyqa-30min
 channels:
  - defaults
 dependencies:
 - python=3.11
-- openai
-- python-dotenv
